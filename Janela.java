@@ -2,69 +2,61 @@ import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JMenu;
-import javax.swing.JButton;
 import javax.swing.JPanel;
 
-class Janela
+public class Janela
 {
 private JFrame janela;
 private JMenuBar barraDeMenu;
-private JMenu menuBuscar;
-private JMenuItem buscaLoja;
-private JMenu buscaProduto;
-private JMenuItem buscaTodosProdutos;
-private JMenuItem buscaAcessorio;
-private JMenuItem buscaDiaADia;
-private JMenuItem buscaTecnologia;
 
-private JMenu menuCadastrar;
-private JMenuItem cadastraCliente;
-private JMenuItem cadastraLoja;
-private JMenuItem cadastraProduto;
+private BotaoQualquer menuBuscar;
+private BotaoQualquer menuBuscaProduto;
+private BotaoQualquer menuCadastrar;
 
+    // construtor
     Janela(String titulo)
     {
         janela = new JFrame(titulo);
 
         barraDeMenu = new JMenuBar();
     
-        // busca de lojas e produtos
-        buscaTodosProdutos = new JMenuItem("Todos Produtos");
-        buscaAcessorio = new JMenuItem("Acessorios");
-        buscaDiaADia = new JMenuItem("Dia a Dia");
-        buscaTecnologia = new JMenuItem("Tecnologia");
-        buscaProduto = new JMenu("Produtos");
-        buscaProduto.add(buscaTodosProdutos);
-        buscaProduto.add(buscaAcessorio);
-        buscaProduto.add(buscaDiaADia);
-        buscaProduto.add(buscaTecnologia);
+        configMenuBusca();
+        configMenuCadastrar();
 
-        buscaLoja = new JMenuItem("Lojas");
-
-        menuBuscar = new JMenu("Buscar");
-        menuBuscar.add(buscaLoja);
-        menuBuscar.add(buscaProduto);
-
-        // castramento
-        cadastraCliente = new JMenuItem("Cliente");
-        cadastraLoja = new JMenuItem("Loja");
-        cadastraProduto = new JMenuItem("Produto");
-        menuCadastrar = new JMenu("Cadastrar");
-
-        menuCadastrar.add(cadastraCliente);
-        menuCadastrar.add(cadastraLoja);
-        menuCadastrar.add(cadastraProduto);
-
-        barraDeMenu.add(menuBuscar);
-        barraDeMenu.add(menuCadastrar);
+        barraDeMenu.add(menuBuscaProduto.getMenu());
+        barraDeMenu.add(menuBuscar.getMenu());
+        barraDeMenu.add(menuCadastrar.getMenu());
 
         janela.setJMenuBar(barraDeMenu);
         janela.setSize(800, 600);
         janela.setVisible(true);
     }
 
-
-
+// métodos
+public void configMenuBusca()
+{
+    configMenuBuscaProduto();
+    menuBuscar = new BotaoQualquer("Buscar", 2);
+    menuBuscar.setOpcaoNova("Lojas");
+    System.out.println("Comparando");
+    menuBuscar.setOpcaoPronta(menuBuscaProduto.getMenu(), null);
+    // setados os nomes e objetos, porem ainda sem action listener
+}
+public void configMenuBuscaProduto()
+{ 
+    menuBuscaProduto = new BotaoQualquer("Produtos", 4);
+    menuBuscaProduto.setOpcaoNova("Todos os Produtos");
+    menuBuscaProduto.setOpcaoNova("Acessorios");
+    menuBuscaProduto.setOpcaoNova("Dia a Dia");
+    menuBuscaProduto.setOpcaoNova("Tecnologia");
+    // setados os nomes e objetos, porem ainda sem action listener
+}
+public void configMenuCadastrar()
+{
+    menuCadastrar = new BotaoQualquer("Cadastrar", 3);
+    menuCadastrar.setOpcaoNova("Cliente");
+    menuCadastrar.setOpcaoNova("Loja");
+    menuCadastrar.setOpcaoNova("Produto");
+    // setados os nomes e objetos, porem ainda sem action listener
+}
 }
