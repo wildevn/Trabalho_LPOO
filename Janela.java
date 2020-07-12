@@ -23,7 +23,6 @@ private BotaoQualquer menuCadastrar;
         configMenuBusca();
         configMenuCadastrar();
 
-        barraDeMenu.add(menuBuscaProduto.getMenu());
         barraDeMenu.add(menuBuscar.getMenu());
         barraDeMenu.add(menuCadastrar.getMenu());
 
