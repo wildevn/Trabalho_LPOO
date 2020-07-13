@@ -34,7 +34,7 @@ private MenuQualquer menuCadastrar;
     }
 
 // métodos
-public void configMenuBusca()
+public void configMenuListarLojas()
 {
     menuListarLojas = new MenuQualquer("Buscar", 0);
     // menuBuscar.setOpcaoNova("Lojas");
