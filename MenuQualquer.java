@@ -3,14 +3,14 @@ import java.awt.event.ActionListener;
 import javax.swing.JMenuItem;
 import javax.swing.JMenu;
 
-public class BotaoQualquer
+public class MenuQualquer
 {
 private JMenu menu;
 private Opcao opcoes[];
 private int quantAtualDeOpcoes;
 
     // construtor
-    BotaoQualquer(String nomeMenu, int quantDeOpcoes)
+    MenuQualquer(String nomeMenu, int quantDeOpcoes)
     {
         setMenu(nomeMenu);
         opcoes = new Opcao[quantDeOpcoes];
