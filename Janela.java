@@ -9,9 +9,9 @@ public class Janela
 private JFrame janela;
 private JMenuBar barraDeMenu;
 
-private BotaoQualquer menuBuscar;
-private BotaoQualquer menuBuscaProduto;
-private BotaoQualquer menuCadastrar;
+private MenuQualquer menuListarLojas;
+private MenuQualquer menuBuscaProduto;
+private MenuQualquer menuCadastrar;
 
     // construtor
     Janela(String titulo)
@@ -20,10 +20,12 @@ private BotaoQualquer menuCadastrar;
 
         barraDeMenu = new JMenuBar();
     
-        configMenuBusca();
+        configMenuBuscaProduto();
+        configMenuListarLojas();
         configMenuCadastrar();
 
-        barraDeMenu.add(menuBuscar.getMenu());
+        barraDeMenu.add(menuBuscaProduto.getMenu());
+        barraDeMenu.add(menuListarLojas.getMenu());
         barraDeMenu.add(menuCadastrar.getMenu());
 
         janela.setJMenuBar(barraDeMenu);
@@ -34,16 +36,13 @@ private BotaoQualquer menuCadastrar;
 // métodos
 public void configMenuBusca()
 {
-    configMenuBuscaProduto();
-    menuBuscar = new BotaoQualquer("Buscar", 2);
-    menuBuscar.setOpcaoNova("Lojas");
-    System.out.println("Comparando");
-    menuBuscar.setOpcaoPronta(menuBuscaProduto.getMenu(), null);
+    menuListarLojas = new MenuQualquer("Buscar", 0);
+    // menuBuscar.setOpcaoNova("Lojas");
     // setados os nomes e objetos, porem ainda sem action listener
 }
 public void configMenuBuscaProduto()
 { 
-    menuBuscaProduto = new BotaoQualquer("Produtos", 4);
+    menuBuscaProduto = new MenuQualquer("Produtos", 4);
     menuBuscaProduto.setOpcaoNova("Todos os Produtos");
     menuBuscaProduto.setOpcaoNova("Acessorios");
     menuBuscaProduto.setOpcaoNova("Dia a Dia");
@@ -52,7 +51,7 @@ public void configMenuBuscaProduto()
 }
 public void configMenuCadastrar()
 {
-    menuCadastrar = new BotaoQualquer("Cadastrar", 3);
+    menuCadastrar = new MenuQualquer("Cadastrar", 3);
     menuCadastrar.setOpcaoNova("Cliente");
     menuCadastrar.setOpcaoNova("Loja");
     menuCadastrar.setOpcaoNova("Produto");
