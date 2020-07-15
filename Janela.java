@@ -37,6 +37,7 @@ private MenuQualquer menuCadastrar;
 
         janela.add(barraDeStatus, BorderLayout.SOUTH);
         janela.setJMenuBar(barraDeMenu);
+        janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         janela.setSize(800, 600);
         janela.setVisible(true);
     }
