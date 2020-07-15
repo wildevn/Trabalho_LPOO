@@ -18,10 +18,10 @@ private int quantAtualDeOpcoes;
     }
 
 // Métodos
-/*public void adicionaActionListener(ActionListener ouvido, int indice)
+public void adicionaActionListener(ActionListener ouvido, int indice)
 {
-    getOpcao(indice).addActionListener(ouvido);
-}*/
+    ((OpcaoItem)opcoes[indice]).getOpcaoX().addActionListener(ouvido);
+}
 
 // Setters e Getters
 public void setMenu(String nomeMenu)
@@ -56,10 +56,10 @@ public JMenu getMenu()
 {
     return this.menu;
 }
-/*public JMenuItem getOpcao(int indice) // trocar
+public OpcaoItem getOpcao(int indice) // trocar
 {
-   // return this.opcoes[indice];
-}*/
+    return (OpcaoItem)opcoes[indice];
+}
 public int getQuantAtualDeOpcoes()
 {
     return this.quantAtualDeOpcoes;
