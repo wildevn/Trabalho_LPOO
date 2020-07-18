@@ -1,14 +1,23 @@
 class Loja{
 
   private String idLoja, nome, endereco;
-  private String[] idClientes = new String[];
-  private String[] idProdutos = new String[];
+  VetorInfinitoString idClientes = new VetorInfinitoString();
+  VetorInfinitoString idProdutos = new VetorInfinitoString();
 
   // Construtor
   Loja(String idLoja, String nome, String endereco){
     setIdLoja(idLoja);
     setNome(nome);
     setEndereco(endereco);
+  }
+  
+  // Metodos
+  void cadastroProduto(Produto produto){
+        idProdutos.adicionaNoFinal(produto.getIdProduto());
+  }
+  
+  void cadastroCliente(Cliente cliente){
+        idClientes.adicionaNoFinal(cliente.getIdCliente());
   }
 
   // Setters e getters
