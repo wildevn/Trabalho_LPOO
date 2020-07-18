@@ -30,6 +30,4 @@ class Loja{
   String getEndereco(){
     return endereco;
   }
-
-
 }
