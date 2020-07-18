@@ -2,28 +2,28 @@ import javax.swing.JMenu;
 
 public class OpcaoMenu extends Opcao
 {
-private JMenu menu;
+    private JMenu menu;
 
     // Construtor
-    OpcaoMenu(JMenu menu, String nomeMenu)   
+        OpcaoMenu(JMenu menu, String nomeMenu)   
+        {
+            if(nomeMenu == null)
+                setOpcaoPronta(menu);  // passando menu pronto
+            else
+                setOpcaoNova(nomeMenu); // criando um novo menu
+        }
+    // Setters e Getters
+    public void setOpcaoPronta(JMenu menu)
     {
-        if(nomeMenu == null)
-            setOpcaoPronta(menu);  // passando menu pronto
-        else
-            setOpcaoNova(nomeMenu); // criando um novo menu
+        this.menu = menu;
     }
-// Setters e Getters
-public void setOpcaoPronta(JMenu menu)
-{
-    this.menu = menu;
-}
-public void setOpcaoNova(String nomeMenu)
-{
-    this.menu = new JMenu(nomeMenu);
-}
+    public void setOpcaoNova(String nomeMenu)
+    {
+        this.menu = new JMenu(nomeMenu);
+    }
 
-public JMenu getOpcaoX()
-{
-    return this.menu;
-}
+    public JMenu getOpcaoX()
+    {
+        return this.menu;
+    }
 }
