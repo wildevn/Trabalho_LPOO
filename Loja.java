@@ -1,8 +1,8 @@
 class Loja{
 
   private String idLoja, nome, endereco;
-  //private String[] clientes = new String[100];
-  private Produto[] produtos = new Produto[]
+  private String[] idClientes = new String[];
+  private String[] idProdutos = new String[];
 
   // Construtor
   Loja(String idLoja, String nome, String endereco){
