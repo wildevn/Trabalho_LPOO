@@ -107,7 +107,7 @@ public class Janela
         menuCadastrar.setOpcaoNova("Loja");
         menuCadastrar.setOpcaoNova("Produto");
         // action listeners
-        menuCadastrar.adicionaActionListener(new OuvidoDoBotaoCliente(this), 0);
+        menuCadastrar.adicionaActionListener(new OuvidoDoBotaoCadastrarCliente(this), 0);
         menuCadastrar.adicionaActionListener(new OuvidoDoBotaoCadastrarLoja(this), 1);
         menuCadastrar.adicionaActionListener(new OuvidoDoBotaoCadastrarProduto(this), 2);
     }
