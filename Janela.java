@@ -9,15 +9,15 @@ import javax.swing.JPanel;
 
 public class Janela
 {
-private JFrame janela;
+    private JFrame janela;
 
-private JMenuBar barraDeMenu;
-private JLabel barraDeStatus;
+    private JMenuBar barraDeMenu;
+    private JLabel barraDeStatus;
 
-private JButton botaoInicio;
-private JButton botaoListarLojas;
-private MenuQualquer menuBuscaProduto;
-private MenuQualquer menuCadastrar;
+    private JButton botaoInicio;
+    private JButton botaoListarLojas;
+    private MenuQualquer menuBuscaProduto;
+    private MenuQualquer menuCadastrar;
 
     // construtor
     Janela(String titulo)
@@ -102,13 +102,13 @@ private MenuQualquer menuCadastrar;
         menuCadastrar.adicionaActionListener(new OuvidoDoBotaoCadastrarProduto(this), 2);
     }
 
-// Setters e Getters
-public JFrame getFrame()
-{
-    return this.janela;
-}
-public JLabel getBarraDeStatus()
-{
-    return this.barraDeStatus;
-}
+    // Setters e Getters
+    public JFrame getFrame()
+    {
+        return this.janela;
+    }
+    public JLabel getBarraDeStatus()
+    {
+        return this.barraDeStatus;
+    }
 }
