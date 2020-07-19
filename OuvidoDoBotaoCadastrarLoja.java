@@ -9,17 +9,22 @@ import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 
-public class OuvidoDoBotaoCadastrarLoja extends Ouvido implements ActionListener
+public class OuvidoDoBotaoCadastrarLoja implements ActionListener
 {
-
-    OuvidoDoBotaoCadastrarLoja(JLabel barraDeStatus)
+    private Janela janela;
+    OuvidoDoBotaoCadastrarLoja(Janela janela)
     {
-        super(barraDeStatus);
+        setJanela(janela);
     }
 
 @Override
 public void actionPerformed(ActionEvent evento)
 {
-    super.getBarraDeStatus().setText("testei cadastrar lojas");
+    janela.getBarraDeStatus().setText("testei cadastrar lojas");
+}
+
+public void setJanela(Janela janela)
+{
+    this.janela = janela;
 }
 }
