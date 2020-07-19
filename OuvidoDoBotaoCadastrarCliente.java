@@ -9,10 +9,10 @@ import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 
-public class OuvidoDoBotaoCliente implements ActionListener
+public class OuvidoDoBotaoCadastrarCliente implements ActionListener
 {
     private Janela janela;
-    OuvidoDoBotaoCliente(Janela janela)
+    OuvidoDoBotaoCadastrarCliente(Janela janela)
     {
         setJanela(janela);
     }
