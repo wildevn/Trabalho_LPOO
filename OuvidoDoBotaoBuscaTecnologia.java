@@ -9,17 +9,22 @@ import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 
-public class OuvidoDoBotaoBuscaTecnologia extends Ouvido implements ActionListener
+public class OuvidoDoBotaoBuscaTecnologia implements ActionListener
 {
-
-    OuvidoDoBotaoBuscaTecnologia(JLabel barraDeStatus)
+    private Janela janela;
+    OuvidoDoBotaoBuscaTecnologia(Janela janela)
     {
-        super(barraDeStatus);
+        setJanela(janela);
     }
 
 @Override
 public void actionPerformed(ActionEvent evento)
 {
-    super.getBarraDeStatus().setText("testei buscar Tecnologia");
+    janela.getBarraDeStatus().setText("testei buscar Tecnologia");
+}
+
+public void setJanela(Janela janela)
+{
+    this.janela = janela;
 }
 }
