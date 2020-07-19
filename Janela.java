@@ -9,15 +9,17 @@ import javax.swing.JPanel;
 
 public class Janela
 {
-    private JFrame janela;
+private JFrame janela;
 
-    private JMenuBar barraDeMenu;
-    private JLabel barraDeStatus;
+private JMenuBar barraDeMenu;
+private JLabel barraDeStatus;
 
-    private JButton botaoInicio;
-    private JButton botaoListarLojas;
-    private MenuQualquer menuBuscaProduto;
-    private MenuQualquer menuCadastrar;
+private JButton botaoInicio;
+private JButton botaoListarLojas;
+private MenuQualquer menuBuscaProduto;
+private MenuQualquer menuCadastrar;
+
+private JPanel painelAnterior;
 
     // construtor
     Janela(String titulo)
@@ -48,6 +50,11 @@ public class Janela
     }
 
     // métodos
+    public void removePainelAnterior()
+    {
+        if(painelAnterior != null)
+            janela.remove(painelAnterior);
+    }
     public void configBotaoInicio()
     {   
         // config nome
@@ -58,13 +65,16 @@ public class Janela
     public void configTelaInicial()
     {
         // criar tela de bem vindo
-        JPanel painel = new JPanel(new GridLayout(3, 2));
-
-        painel.add(new JLabel("Bem vindo ao sistema de lojas"));
-        painel.add(new JLabel("X Usuarios cadastrados"));
-        painel.add(new JLabel("Y Lojas conveniadas"));
-        painel.add(new JLabel("W Produtos disponiveis para compra"));
-        janela.add(painel, BorderLayout.CENTER);
+        JPanel painel1 = new JPanel(new GridLayout(2, 1));
+        JPanel painel2 = new JPanel();
+        painel1.add(new JLabel("Bem vindo ao sistema de lojas"));
+        painel2.add(new JLabel("X Usuarios cadastrados"));
+        painel2.add(new JLabel("Y Lojas conveniadas"));
+        painel2.add(new JLabel("W Produtos disponiveis para compra"));
+        painel1.add(painel2);
+        removePainelAnterior();
+        setPainelAnterior(painel1);
+        janela.add(painel1, BorderLayout.CENTER);
         janela.setVisible(true);
 
     }
@@ -102,13 +112,17 @@ public class Janela
         menuCadastrar.adicionaActionListener(new OuvidoDoBotaoCadastrarProduto(this), 2);
     }
 
-    // Setters e Getters
-    public JFrame getFrame()
-    {
-        return this.janela;
-    }
-    public JLabel getBarraDeStatus()
-    {
-        return this.barraDeStatus;
-    }
+// Setters e Getters
+public JFrame getFrame()
+{
+    return this.janela;
+}
+public JLabel getBarraDeStatus()
+{
+    return this.barraDeStatus;
+}
+public void setPainelAnterior(JPanel painelAnterior)
+{
+    this.painelAnterior = painelAnterior;
+}
 }
