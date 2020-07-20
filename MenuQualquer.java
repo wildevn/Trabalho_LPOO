@@ -1,4 +1,5 @@
 import java.awt.event.ActionListener;
+import java.awt.Component;
 
 import javax.swing.JMenuItem;
 import javax.swing.JMenu;
@@ -6,21 +7,21 @@ import javax.swing.JMenu;
 public class MenuQualquer
 {
     private JMenu menu;
-    private Opcao opcoes[];
+    private Component opcoes[];
     private int quantAtualDeOpcoes;
 
     // construtor
         MenuQualquer(String nomeMenu, int quantDeOpcoes)
         {
             setMenu(nomeMenu);
-            opcoes = new Opcao[quantDeOpcoes];
+            opcoes = new Component[quantDeOpcoes];
             setQuantAtualDeOpcoes(0);
         }
 
     // Métodos
     public void adicionaActionListener(ActionListener ouvido, int indice)
     {
-        ((OpcaoItem)opcoes[indice]).getOpcaoX().addActionListener(ouvido);
+        ((JMenuItem)opcoes[indice]).addActionListener(ouvido);
     }
 
     // Setters e Getters
@@ -30,20 +31,20 @@ public class MenuQualquer
     }
     public void setOpcaoNova(String nomeOpcao)
     {
-        opcoes[quantAtualDeOpcoes] = new OpcaoItem(null, nomeOpcao);
-        menu.add(((OpcaoItem)opcoes[quantAtualDeOpcoes]).getOpcaoX());
+        opcoes[quantAtualDeOpcoes] = new JMenuItem(nomeOpcao);
+        menu.add(opcoes[quantAtualDeOpcoes]);
         setQuantAtualDeOpcoes(getQuantAtualDeOpcoes() + 1);
     }
     public void setOpcaoPronta(JMenu menu, JMenuItem menuItem)
     {
         if(menu == null)
         {
-            opcoes[quantAtualDeOpcoes] = new OpcaoItem(menuItem, null);
+            opcoes[quantAtualDeOpcoes] = menuItem;
             this.menu.add(menuItem);
         }
         else if(menuItem == null)
         {
-            opcoes[quantAtualDeOpcoes] = new OpcaoMenu(menu, null);
+            opcoes[quantAtualDeOpcoes] = menu;
             this.menu.add(menu);
         }
         setQuantAtualDeOpcoes(getQuantAtualDeOpcoes() + 1);
@@ -56,9 +57,9 @@ public class MenuQualquer
     {
         return this.menu;
     }
-    public OpcaoItem getOpcao(int indice) // trocar
+    public Component getOpcao(int indice) 
     {
-        return (OpcaoItem)opcoes[indice];
+        return opcoes[indice];
     }
     public int getQuantAtualDeOpcoes()
     {
