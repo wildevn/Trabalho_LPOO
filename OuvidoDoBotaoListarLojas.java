@@ -22,26 +22,46 @@ public class OuvidoDoBotaoListarLojas implements ActionListener
     @Override
     public void actionPerformed(ActionEvent evento)
     {
-        JLabel aux;
-        JPanel painelListarLojas;
-        janela.getBarraDeStatus().setText("carregando Listar Lojas...");
+    JLabel aux;
+    JPanel painelListarLojas;
+    JButton[] botaoDetalhes;
+    int auxiliar = 0;
+    
+        janela.getBarraDeStatus().setText("carregando Lojas...");
         // encontrar e puxar todas as lojas do BD e a quantidade
 
         painelListarLojas = new JPanel(new GridLayout(20, 5)); // grid deve ser no formato (nLojas, 5 colunas)
+        botaoDetalhes = new JButton[20]; // nlojas = n botoes
 
         for(int i = 0; i < 100; i++)
         {
             if((i % 5) == 0)
-                aux = new JLabel("nomeProduto");
+            {
+                aux = new JLabel("nomeLoja");
+                painelListarLojas.add(aux);
+            }
             else if((i % 5) == 1)
+            {
                 aux = new JLabel("");
+                painelListarLojas.add(aux);
+            }
             else if((i % 5) == 2)
-                aux = new JLabel("quantidade: x");
+            {
+                aux = new JLabel("Afonco Pena");
+                painelListarLojas.add(aux);
+            }
             else if((i % 5) == 3)
-                aux = new JLabel("");
-            else
-                aux = new JLabel("RS w.00");
-            painelListarLojas.add(aux);
+            {
+                aux = new JLabel("532");
+                painelListarLojas.add(aux);
+            }
+            else 
+            {
+                botaoDetalhes[auxiliar] = new JButton("Detalhes da Loja");
+                botaoDetalhes[auxiliar].addActionListener(new OuvidoDoBotaoDetalhesLoja(janela));
+                painelListarLojas.add(botaoDetalhes[auxiliar]);
+                auxiliar++;
+            }
         }
         janela.removePainelAnterior();
         janela.setPainelAnterior(painelListarLojas);
@@ -49,6 +69,7 @@ public class OuvidoDoBotaoListarLojas implements ActionListener
         janela.getBarraDeStatus().setText(" ");
         janela.getFrame().setVisible(true);
     }
+
     public void setJanela(Janela janela)
     {
         this.janela = janela;
