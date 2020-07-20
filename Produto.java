@@ -14,6 +14,11 @@ abstract class Produto{
     setPreco(preco);
     setQuantidade(quantidade);
   }
+  
+  // Metodos
+  void diminuiQuant(){
+    setQuantidade(getQuantidade()-1);
+  }
 
   // Setters e getters
   void setIdProduto(String idProduto){
