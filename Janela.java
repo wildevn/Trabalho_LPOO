@@ -68,7 +68,7 @@ public class Janela
         JPanel painel1 = new JPanel(new GridLayout(2, 1));
         JPanel painel2 = new JPanel();
         painel1.add(new JLabel("Bem vindo ao sistema de lojas"));
-        painel2.add(new JLabel("X Usuarios cadastrados"));
+        painel2.add(new JLabel("X Clientes cadastrados"));
         painel2.add(new JLabel("Y Lojas conveniadas"));
         painel2.add(new JLabel("W Produtos disponiveis para compra"));
         painel1.add(painel2);
@@ -102,14 +102,12 @@ public class Janela
     public void configMenuCadastrar()
     {
         // config nome do menu e das opcoes
-        menuCadastrar = new MenuQualquer("Cadastrar", 3);
+        menuCadastrar = new MenuQualquer("Cadastrar", 2);
         menuCadastrar.setOpcaoNova("Cliente");
         menuCadastrar.setOpcaoNova("Loja");
-        menuCadastrar.setOpcaoNova("Produto");
         // action listeners
         menuCadastrar.adicionaActionListener(new OuvidoDoBotaoCadastrarCliente(this), 0);
         menuCadastrar.adicionaActionListener(new OuvidoDoBotaoCadastrarLoja(this), 1);
-        menuCadastrar.adicionaActionListener(new OuvidoDoBotaoCadastrarProduto(this), 2);
     }
 
     // Setters e Getters
