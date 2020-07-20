@@ -4,18 +4,23 @@ import java.awt.event.ActionListener;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 
 public class OuvidoDoBotaoCadastrarLoja implements ActionListener
 {
     private Janela janela;
-    JTextField txtNomeLoja;
-    JTextField txtEnderecoLoja;
+    private JTextField txtNomeLoja;
+    private JTextField txtEnderecoLoja;
+    private JTextField txtIdLoja;
+    private JPasswordField txtSenhaLoja;
+
     OuvidoDoBotaoCadastrarLoja(Janela janela)
     {
         setJanela(janela);
@@ -25,19 +30,28 @@ public class OuvidoDoBotaoCadastrarLoja implements ActionListener
 public void actionPerformed(ActionEvent evento)
 {
     JButton botaoOkLoja = new JButton("Cadastrar");
-    JPanel painelCadastramento = new JPanel(new GridLayout(4, 2));
+    JPanel painelCadastramento = new JPanel(new GridLayout(6, 2));
     janela.getBarraDeStatus().setText("carregando cadastramento de loja...");
 
     // itens da loja
-    painelCadastramento.add(new JLabel("Nome da Loja: "));
     txtNomeLoja = new JTextField();
+    txtEnderecoLoja = new JTextField();
+    txtIdLoja = new JTextField();
+    txtSenhaLoja = new JPasswordField();
+
+    painelCadastramento.add(new JLabel("Nome da Loja:"));
     painelCadastramento.add(txtNomeLoja);
 
-    painelCadastramento.add(new JLabel("Endereco: "));
-    txtEnderecoLoja = new JTextField();
+    painelCadastramento.add(new JLabel("Endereco:"));
     painelCadastramento.add(txtEnderecoLoja);
 
-    botaoOkLoja.addActionListener(new OuvidoDoBotaoOkLoja(janela, txtNomeLoja, txtEnderecoLoja));
+    painelCadastramento.add(new JLabel("id Loja:"));
+    painelCadastramento.add(txtIdLoja);
+
+    painelCadastramento.add(new JLabel("senha: "));
+    painelCadastramento.add(txtSenhaLoja);
+
+    botaoOkLoja.addActionListener(new OuvidoDoBotaoOkLoja(janela, txtNomeLoja, txtEnderecoLoja, txtIdLoja, txtSenhaLoja));
     painelCadastramento.add(new JLabel(""));
     painelCadastramento.add(botaoOkLoja);
     janela.getBarraDeStatus().setText(" ");
