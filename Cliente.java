@@ -18,6 +18,7 @@ class Cliente{
     void comprar(Produto produto){
         String novaCompra = produto.getIdProduto();
         inventario.adicionaNoFinal(novaCompra);
+        dinheiroGasto += produto.getPreco();
     }
   
     // Setters e getters
