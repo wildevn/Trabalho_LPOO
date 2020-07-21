@@ -9,17 +9,16 @@ import javax.swing.JPanel;
 
 public class Janela
 {
-    private JFrame janela;
+private JFrame janela;
 
-    private JMenuBar barraDeMenu;
-    private JLabel barraDeStatus;
+private JMenuBar barraDeMenu;
 
-    private JButton botaoInicio;
-    private JButton botaoListarLojas;
-    private MenuQualquer menuBuscaProduto;
-    private MenuQualquer menuCadastrar;
+private JButton botaoInicio;
+private JButton botaoListarLojas;
+private MenuQualquer menuBuscaProduto;
+private MenuQualquer menuCadastrar;
 
-    private JPanel painelAnterior;
+private JPanel painelAnterior;
 
     // construtor
     Janela(String titulo)
@@ -27,7 +26,6 @@ public class Janela
         janela = new JFrame(titulo);
         janela.setLayout(new BorderLayout());
 
-        barraDeStatus = new JLabel(" ");
         barraDeMenu = new JMenuBar();
         
         configBotaoInicio();
@@ -42,7 +40,6 @@ public class Janela
 
         configTelaInicial();
         
-        janela.add(barraDeStatus, BorderLayout.SOUTH);
         janela.setJMenuBar(barraDeMenu);
         janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         janela.setSize(800, 600);
@@ -72,6 +69,7 @@ public class Janela
         painel2.add(new JLabel("Y Lojas conveniadas"));
         painel2.add(new JLabel("W Produtos disponiveis para compra"));
         painel1.add(painel2);
+
         removePainelAnterior();
         setPainelAnterior(painel1);
         janela.add(painel1, BorderLayout.CENTER);
@@ -110,17 +108,13 @@ public class Janela
         menuCadastrar.adicionaActionListener(new OuvidoDoBotaoCadastrarLoja(this), 1);
     }
 
-    // Setters e Getters
-    public JFrame getFrame()
-    {
-        return this.janela;
-    }
-    public JLabel getBarraDeStatus()
-    {
-        return this.barraDeStatus;
-    }
-    public void setPainelAnterior(JPanel painelAnterior)
-    {
-        this.painelAnterior = painelAnterior;
-    }
+// Setters e Getters
+public JFrame getFrame()
+{
+    return this.janela;
+}
+public void setPainelAnterior(JPanel painelAnterior)
+{
+    this.painelAnterior = painelAnterior;
+}
 }
