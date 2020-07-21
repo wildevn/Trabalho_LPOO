@@ -10,10 +10,10 @@ import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 
-public class OuvidoDoBotaoBuscaAcessorios implements ActionListener
+public class OuvidoDoBotaoBuscaTecnologia implements ActionListener
 {
     private Janela janela;
-    OuvidoDoBotaoBuscaAcessorios(Janela janela)
+    OuvidoDoBotaoBuscaTecnologia(Janela janela)
     {
         setJanela(janela);
     }
@@ -22,16 +22,16 @@ public class OuvidoDoBotaoBuscaAcessorios implements ActionListener
     public void actionPerformed(ActionEvent evento)
     {
     JLabel aux;
-    JPanel painelAcessorios;
+    JPanel painelTecnologia;
 
         // encontrar e puxar todas as lojas do BD e a quantidade
 
-        painelAcessorios = new JPanel(new GridLayout(20, 5)); // grid deve ser no formato (nLojas, 5 colunas)
+        painelTecnologia = new JPanel(new GridLayout(20, 5)); // grid deve ser no formato (nLojas, 5 colunas)
 
         for(int i = 0; i < 100; i++)
         {
             if((i % 5) == 0)
-                aux = new JLabel("nomeAcessorio");
+                aux = new JLabel("nomeProdutoTecnologico");
             else if((i % 5) == 1)
                 aux = new JLabel("");
             else if((i % 5) == 2)
@@ -40,18 +40,17 @@ public class OuvidoDoBotaoBuscaAcessorios implements ActionListener
                 aux = new JLabel("");
             else
                 aux = new JLabel("RS w.00");
-            painelAcessorios.add(aux);
+            painelTecnologia.add(aux);
         }
         
         janela.removePainelAnterior();
-        janela.setPainelAnterior(painelAcessorios);
-        janela.getFrame().add(painelAcessorios, BorderLayout.CENTER);
+        janela.setPainelAnterior(painelTecnologia);
+        janela.getFrame().add(painelTecnologia, BorderLayout.CENTER);
         janela.getFrame().setVisible(true);
-    }
+}
 
     public void setJanela(Janela janela)
     {
         this.janela = janela;
     }
-
 }
