@@ -20,9 +20,7 @@ public class OuvidoDoBotaoInicio implements ActionListener
 @Override
 public void actionPerformed(ActionEvent evento)
 {
-    janela.getBarraDeStatus().setText("carregando tela inicial...");
     janela.configTelaInicial();
-    janela.getBarraDeStatus().setText("");
 }
 
 public void setJanela(Janela janela)
