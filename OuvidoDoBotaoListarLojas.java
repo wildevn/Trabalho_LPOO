@@ -57,8 +57,8 @@ public class OuvidoDoBotaoListarLojas implements ActionListener
             }
             else 
             {
-                botaoDetalhes[auxiliar] = new JButton("Detalhes da Loja");
-                botaoDetalhes[auxiliar].addActionListener(new OuvidoDoBotaoDetalhesLoja(janela));
+                botaoDetalhes[auxiliar] = new JButton("Detalhes");
+                botaoDetalhes[auxiliar].addActionListener(new OuvidoDoBotaoDetalhes(janela, new Loja("x", "x0", "x1"))); // será passada a loja obtida do BD
                 painelListarLojas.add(botaoDetalhes[auxiliar]);
                 auxiliar++;
             }
