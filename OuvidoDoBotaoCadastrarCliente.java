@@ -32,7 +32,6 @@ private JPasswordField txtSenhaCliente;
     {
         JButton botaoOkCliente = new JButton("Cadastrar");
         JPanel painelCadastraCliente = new JPanel(new GridLayout(7,2));
-        janela.getBarraDeStatus().setText("carregando tela cadastramento cliente...");
         
         // criando novas caixas de texto
         txtNomeCliente = new JTextField();
@@ -66,7 +65,6 @@ private JPasswordField txtSenhaCliente;
         painelCadastraCliente.add(botaoOkCliente);
 
         // mandando o painel para a janela e atualizando o frame
-        janela.getBarraDeStatus().setText(" ");
         janela.removePainelAnterior();
         janela.setPainelAnterior(painelCadastraCliente);
         janela.getFrame().add(painelCadastraCliente, BorderLayout.CENTER);
