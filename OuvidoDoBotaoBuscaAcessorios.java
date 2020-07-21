@@ -23,7 +23,7 @@ public class OuvidoDoBotaoBuscaAcessorios implements ActionListener
     {
     JLabel aux;
     JPanel painelAcessorios;
-        janela.getBarraDeStatus().setText("carregando Acessorios...");
+
         // encontrar e puxar todas as lojas do BD e a quantidade
 
         painelAcessorios = new JPanel(new GridLayout(20, 5)); // grid deve ser no formato (nLojas, 5 colunas)
@@ -42,10 +42,10 @@ public class OuvidoDoBotaoBuscaAcessorios implements ActionListener
                 aux = new JLabel("RS w.00");
             painelAcessorios.add(aux);
         }
+        
         janela.removePainelAnterior();
         janela.setPainelAnterior(painelAcessorios);
         janela.getFrame().add(painelAcessorios, BorderLayout.CENTER);
-        janela.getBarraDeStatus().setText(" ");
         janela.getFrame().setVisible(true);
     }
 
