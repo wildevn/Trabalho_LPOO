@@ -29,4 +29,10 @@ public class VetorInfinitoString{
     void setQuantElementosAdicionados(int quantElementosAdicionados){
         this.quantElementosAdicionados = quantElementosAdicionados;
     }
+    String getElemento(int k){
+        return vetor[k];
+    }
+    int getQuantElementosAdicionados(){
+        return quantElementosAdicionados;
+    }
 }
