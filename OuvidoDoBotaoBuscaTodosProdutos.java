@@ -23,7 +23,6 @@ private Janela janela;
     {
         JPanel painelTodosOsProdutos;
         JLabel aux;
-        janela.getBarraDeStatus().setText("carregando todos os Produtos...");
         // BD
 
         painelTodosOsProdutos = new JPanel(new GridLayout(20, 5)); // modelo: (nItens, 5 colunas)
@@ -41,10 +40,10 @@ private Janela janela;
                 aux = new JLabel("RS w.00");
             painelTodosOsProdutos.add(aux);
         }
+        
         janela.removePainelAnterior();
         janela.setPainelAnterior(painelTodosOsProdutos);
         janela.getFrame().add(painelTodosOsProdutos);
-        janela.getBarraDeStatus().setText(" ");
         janela.getFrame().setVisible(true);
     }
 
