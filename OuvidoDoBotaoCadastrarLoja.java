@@ -29,8 +29,7 @@ public class OuvidoDoBotaoCadastrarLoja implements ActionListener
 public void actionPerformed(ActionEvent evento)
 {
     JButton botaoOkLoja = new JButton("Cadastrar");
-    JPanel painelCadastramento = new JPanel(new GridLayout(6, 2));
-    janela.getBarraDeStatus().setText("carregando cadastramento de loja...");
+    JPanel painelCadastramento = new JPanel(new GridLayout(5, 2));
 
     // itens da loja
     txtNomeLoja = new JTextField();
@@ -53,8 +52,7 @@ public void actionPerformed(ActionEvent evento)
     botaoOkLoja.addActionListener(new OuvidoDoBotaoOkLoja(janela, txtNomeLoja, txtEnderecoLoja, txtIdLoja, txtSenhaLoja));
     painelCadastramento.add(new JLabel(""));
     painelCadastramento.add(botaoOkLoja);
-    janela.getBarraDeStatus().setText(" ");
-
+    
     janela.removePainelAnterior();
     janela.setPainelAnterior(painelCadastramento);
     janela.getFrame().add(painelCadastramento);
