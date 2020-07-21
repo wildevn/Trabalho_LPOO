@@ -3,7 +3,6 @@ import java.awt.event.ActionListener;
 
 import java.awt.BorderLayout;
 
-import javax.lang.model.util.ElementScanner6;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -63,13 +62,6 @@ private DiaADia diaADia;
         {
             //
         }
-        
-        // tirar;.....
-        janela.removePainelAnterior();
-        janela.setPainelAnterior(painel);
-        janela.getFrame().add(painel, BorderLayout.CENTER);
-        //janela.getBarraDeStatus().setText(" ");
-        janela.getFrame().setVisible(true);
     }
 
     // Setters e Getters
