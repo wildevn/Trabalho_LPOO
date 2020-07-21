@@ -27,7 +27,6 @@ public class OuvidoDoBotaoListarLojas implements ActionListener
     JButton[] botaoDetalhes;
     int auxiliar = 0;
     
-        janela.getBarraDeStatus().setText("carregando Lojas...");
         // encontrar e puxar todas as lojas do BD e a quantidade
 
         painelListarLojas = new JPanel(new GridLayout(20, 5)); // grid deve ser no formato (nLojas, 5 colunas)
@@ -66,7 +65,6 @@ public class OuvidoDoBotaoListarLojas implements ActionListener
         janela.removePainelAnterior();
         janela.setPainelAnterior(painelListarLojas);
         janela.getFrame().add(painelListarLojas, BorderLayout.CENTER);
-        janela.getBarraDeStatus().setText(" ");
         janela.getFrame().setVisible(true);
     }
 
