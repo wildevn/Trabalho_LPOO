@@ -24,7 +24,6 @@ public class OuvidoDoBotaoBuscaDiaADia implements ActionListener
     JLabel aux;
     JPanel painelDiaADia;
     
-        janela.getBarraDeStatus().setText("carregando Tecnologia...");
         // encontrar e puxar todas as lojas do BD e a quantidade
 
         painelDiaADia = new JPanel(new GridLayout(20, 5)); // grid deve ser no formato (nLojas, 5 colunas)
@@ -43,10 +42,10 @@ public class OuvidoDoBotaoBuscaDiaADia implements ActionListener
                 aux = new JLabel("RS w.00");
             painelDiaADia.add(aux);
         }
+        
         janela.removePainelAnterior();
         janela.setPainelAnterior(painelDiaADia);
         janela.getFrame().add(painelDiaADia, BorderLayout.CENTER);
-        janela.getBarraDeStatus().setText(" ");
         janela.getFrame().setVisible(true);
     }
 
