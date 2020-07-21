@@ -20,7 +20,6 @@ public class OuvidoDoBotaoCadastrarProduto implements ActionListener
 @Override
 public void actionPerformed(ActionEvent evento)
 {
-    janela.getBarraDeStatus().setText("testei cadastrar Produto");
 }
 
 public void setJanela(Janela janela)
