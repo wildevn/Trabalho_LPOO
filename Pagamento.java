@@ -1,6 +1,6 @@
 abstract class Pagamento{
   
-  boolean aprovado(){
+  Pagamento(){
   }
   
 }
