@@ -10,7 +10,7 @@ abstract class Produto{
     setNome(nome);
     setCor(cor);
     setDescricaoTecnica(descricaoTecnica);
-    setTipo(tipo);
+    setIdLoja(idLoja);
     setPreco(preco);
     setQuantidade(quantidade);
   }
