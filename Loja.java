@@ -1,7 +1,8 @@
 class Loja{
 
     private String idLoja, nome, endereco, senha;
-    VetorInfinitoString idProdutos = new VetorInfinitoString();
+    private VetorInfinitoString idProdutos = new VetorInfinitoString();
+    private Pagamento[] formasPagamento = new Pagamento[2];
   
     // Construtor
     Loja(String idLoja, String nome, String endereco){
@@ -18,7 +19,7 @@ class Loja{
     void processarCompra(String idProduto){
         for(int i = 0; i<idProdutos.getQuantElementosAdicionados(); i++){
             if(idProdutos.getVetor(i).equals(idProduto){
-                // busca produto no banco de dados com o id
+                // busca produto no bd com o id
                 // diminui a quantidade do produto em 1
             }
         }
