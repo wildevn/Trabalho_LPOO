@@ -23,7 +23,7 @@ private JButton botaoProdutos;
         painelLoja = new JPanel(new GridLayout(2, 2));
         painelLoja.add(new JLabel(loja.getNome()));
         painelLoja.add(new JLabel(loja.getEndereco()));
-        painelLoja.add(new JLabel("Quantidade de produtos: " + loja.produtos.quantAdicionados())); // falta pegar a quantidade de produtos da loja
+        painelLoja.add(new JLabel("Quantidade de produtos: " + loja.idProdutos.quantElementosAdicionados())); // acho que é isso
         painelLoja.add(botaoProdutos);
 
         janela.removePainelAnterior();
