@@ -1,11 +1,11 @@
 abstract class Produto{
 
-  private String idProduto, nome, cor, descricaoTecnica, tipo;
+  private String idProduto, nome, cor, descricaoTecnica, idLoja;
   private double preco;
   private int quantidade;
 
   // Construtor
-  Produto(String idProduto, String nome, String cor, String descricaoTecnica, String tipo, double preco, int quantidade){
+  Produto(String idProduto, String nome, String cor, String descricaoTecnica, String idLoja, double preco, int quantidade){
     setIdProduto(idProduto);
     setNome(nome);
     setCor(cor);
@@ -33,8 +33,8 @@ abstract class Produto{
   void setDescricaoTecnica(String descricaoTecnica){
     this.descricaoTecnica = descricaoTecnica;
   }
-  void setTipo(String tipo){
-    this.tipo = tipo;
+  void setIdLoja(String idLoja){
+    this.idLoja = idLoja;
   }
   void setPreco(double preco){
     this.preco = preco;
@@ -54,8 +54,8 @@ abstract class Produto{
   String getDescricaoTecnica(){
     return descricaoTecnica;
   }
-  String getTipo(){
-    return tipo;
+  String getIdLoja(){
+    return idLoja;
   }
   double getPreco(){
     return preco;
