@@ -1,4 +1,4 @@
-class Pagamento{
+public class Pagamento{
 
     private int maxSemJuros, maxComJuros;
     private String numBoleto;
@@ -15,30 +15,28 @@ class Pagamento{
     }
 
     // Metodos
-    double calcularJuro(double preco, double juros, int parcelas){
-
-        juros = preco*Math.pow((1+0.05), parcelas) - preco;
-
-        return juros;
+    public double calcularJuro(double preco, int parcelas){
+        int total = preco*Math.pow((1+0.05), parcelas);
+        return total;
     }
     
     // Setters e getters
-    void setMaxSemJuros(int maxSemJuros){
+    public void setMaxSemJuros(int maxSemJuros){
         this.maxSemJuros = maxSemJuros;
     }
-    void setMaxComJuros(int maxComJuros){
+    public void setMaxComJuros(int maxComJuros){
         this.maxComJuros = maxComJuros;
     }
-    int getMaxSemJuros(){
+    public int getMaxSemJuros(){
         return maxSemJuros;
     }
-    int getMaxComJuros(){
+    public int getMaxComJuros(){
         return maxComJuros;
     }
-    void setNumBoleto(String numBoleto){
+    public void setNumBoleto(String numBoleto){
         this.numBoleto = numBoleto;
     }
-    String getNumBoleto(){
+    public String getNumBoleto(){
         return numBoleto;
     }
 }
