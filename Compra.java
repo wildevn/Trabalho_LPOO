@@ -1,21 +1,27 @@
 public class Compra{
 
-    private double valor;
+    private double valor, valorAtualizado;
     private int parcelas;
 
     // Contrutor
-    Compra(double valor, int parcelas){
+    public Compra(double valor, int parcelas){
     setValor(valor);
     setParcelas(parcelas);
     }
 
     // Metodos
-    public void gerenciaCompra(Loja loja, Produto produto, Cliente cliente){
-        loja.processarCompra(produto, valor, parcelas);
-        cliente.comprar(produto);
+    public void gerenciaCompraFinal(Loja loja, Produto produto, Cliente cliente){
+        loja.processarCompra(produto);
+        cliente.comprar(produto, valorAtualizado);
     }
 
-    
+    public void gerenciaCompraInicioC(Loja loja, Produto produto){
+        valorAtualizado = loja.calculaPrecoC(valor, parcelas);
+    }
+
+    public void gerenciaCompraInicioB(Loja loja, Produto produto){
+        valorAtualizado = loja.calculaPrecoB(valor);
+    }
 
     // Setters e getters
     public void setValor(double valor){
