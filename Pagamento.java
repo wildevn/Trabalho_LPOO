@@ -1,12 +1,15 @@
+import java.util.Random;
+
 public class Pagamento{
 
     private int maxSemJuros, maxComJuros;
     private String numBoleto;
-    private Aleatorio aleatorio = new Aleatorio();
+    //private Aleatorio aleatorio = new Aleatorio();
 
     // Construtor
     Pagamento(){
-        numBoleto = aleatorio.geraBoleto();
+        Random random = new Random();
+        numBoleto = random.nextInt(1000);
         setNumBoleto(numBoleto);
     }
     Pagamento(int maxSemJuros, int maxComJuros){
@@ -18,6 +21,19 @@ public class Pagamento{
     public double calcularJuro(double preco, int parcelas){
         int total = preco*Math.pow((1+0.05), parcelas);
         return total;
+    }
+
+    public double calcularPrecoC(double preco, int parcelas){
+        if(parcelas <= maxSemJuros){
+            return preco;
+        }
+        else{
+            return calcularJuro(preco, parcelas);
+        }
+    }
+
+    public double calcularPrecoB(double preco){
+        return preco*0.85;
     }
     
     // Setters e getters
