@@ -17,6 +17,8 @@ public class OuvidoDoBotaoCadastrarLoja implements ActionListener
     private Janela janela;
     private JTextField txtNomeLoja;
     private JTextField txtEnderecoLoja;
+    private JTextField txtMaxCartaoSemJuros;
+    private JTextField txtMaxCartaoComJuros;
     private JTextField txtIdLoja;
     private JPasswordField txtSenhaLoja;
 
@@ -29,11 +31,13 @@ public class OuvidoDoBotaoCadastrarLoja implements ActionListener
 public void actionPerformed(ActionEvent evento)
 {
     JButton botaoOkLoja = new JButton("Cadastrar");
-    JPanel painelCadastramento = new JPanel(new GridLayout(5, 2));
+    JPanel painelCadastramento = new JPanel(new GridLayout(7, 2));
 
     // itens da loja
     txtNomeLoja = new JTextField();
     txtEnderecoLoja = new JTextField();
+    txtMaxCartaoSemJuros = new JTextField();
+    txtMaxCartaoComJuros = new JTextField();
     txtIdLoja = new JTextField();
     txtSenhaLoja = new JPasswordField();
 
@@ -43,13 +47,19 @@ public void actionPerformed(ActionEvent evento)
     painelCadastramento.add(new JLabel("Endereco:"));
     painelCadastramento.add(txtEnderecoLoja);
 
+    painelCadastramento.add(new JLabel("Qtda Max de parcelas SEM juros no cartao:"));
+    painelCadastramento.add(txtMaxCartaoSemJuros);
+
+    painelCadastramento.add(new JLabel("Qtda Max de parcelas COM juros no cartao:"));
+    painelCadastramento.add(txtMaxCartaoComJuros);
+
     painelCadastramento.add(new JLabel("id Loja:"));
     painelCadastramento.add(txtIdLoja);
 
     painelCadastramento.add(new JLabel("senha: "));
     painelCadastramento.add(txtSenhaLoja);
 
-    botaoOkLoja.addActionListener(new OuvidoDoBotaoOkLoja(janela, txtNomeLoja, txtEnderecoLoja, txtIdLoja, txtSenhaLoja));
+    botaoOkLoja.addActionListener(new OuvidoDoBotaoOkLoja(janela, txtNomeLoja, txtEnderecoLoja, txtMaxCartaoSemJuros, txtMaxCartaoComJuros, txtIdLoja, txtSenhaLoja));
     painelCadastramento.add(new JLabel(""));
     painelCadastramento.add(botaoOkLoja);
     
