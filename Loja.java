@@ -71,5 +71,9 @@ public class Loja{
     public String getSenha(){
         return senha;
     }
+    public Pagamento getPagamento()
+    {
+        return cartao;
+    }
 
 }
