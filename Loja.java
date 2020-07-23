@@ -21,7 +21,7 @@ public class Loja{
           idProdutos.adicionaNoFinal(produto.getIdProduto());
     }
 
-    public void processarCompra(Produto produto, double preco, int parcelas){
+    public void processarCompra(Produto produto){
       if(produto.getQuantidade() > 0)
         produto.diminuiQuant();
       else{
@@ -29,11 +29,18 @@ public class Loja{
       }
     }
 
-
+    public double calculaPrecoC(double preco, int parcelas){
+      return cartao.calculaPrecoC(preco, parcelas);
+    }
 
     public String processarCompraBoleto(){
-      Pagamento boleto = new Pagamento();
-      return boleto.getNumBoleto();
+      private Pagamento boleto = new Pagamento();
+      return boleto.getNumBoleto;  
+    }
+
+    public double calculaPrecoB(double preco){
+      private Pagamento boleto = new Pagamento();
+      return boleto.calculaPrecoB;
     }
   
     // Setters e getters
@@ -54,12 +61,6 @@ public class Loja{
     }
     public void setMaxComJuros(int maxComJuros){
       this.maxComJuros = maxComJuros;
-    }
-    public int getMaxSemJuros(){
-      return maxSemJuros;
-    }
-    public int getMaxComJuros(){
-      return maxComJuros;
     }
     public String getIdLoja(){
       return idLoja;
