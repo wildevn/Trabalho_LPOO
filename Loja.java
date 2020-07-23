@@ -32,12 +32,12 @@ public class Loja{
 
     public String processarCompraBoleto(){
       private Pagamento boleto = new Pagamento();
-      return boleto.getNumBoleto;  
+      return boleto.getNumBoleto();  
     }
 
     public double calculaPrecoB(double preco){
       private Pagamento boleto = new Pagamento();
-      return boleto.calculaPrecoB;
+      return boleto.calculaPrecoB();
     }
   
     // Setters e getters
