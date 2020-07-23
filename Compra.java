@@ -25,15 +25,21 @@ public class Compra{
 
     // Setters e getters
     public void setValor(double valor){
-    this.valor = valor;
+        this.valor = valor;
     }
     public void setParcelas(int parcelas){
-    this.parcelas = parcelas;
+        this.parcelas = parcelas;
+    }
+    public void setValorAtualizado(double valor){
+        this.valorAtualizado = valor;
+    }
+    public double getValorAtualizado(){
+        return valorAtualizado;
     }
     public double getValor(){
-    return valor;
+        return valor;
     }
     public int getParcelas(){
-    return parcelas;
+        return parcelas;
     }
 }
