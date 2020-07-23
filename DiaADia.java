@@ -3,8 +3,8 @@ class DiaADia extends Produto{
   String tipoDiaADia;
 
   // Construtor
-  DiaADia(String idProduto, String nome, String cor, String descricaoTecnica, String tipo, double preco, int quantidade, String tipoDiaADia){
-    super(idProduto, nome, cor, descricaoTecnica, tipo, preco, quantidade);
+  DiaADia(String nome, String cor, String descricaoTecnica, String idLoja, double preco, int quantidade, String tipoDiaADia){
+    super(nome, cor, descricaoTecnica, tipo, preco, quantidade);
     setTipoDiaADia(tipoDiaADia);
   }
 
