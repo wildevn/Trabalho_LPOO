@@ -17,6 +17,7 @@ class Pagamento{
     // Metodos
     double calcularJuro(double preco, int juros, int parcelas){
         juros = preco*Math.pow((1+0.05), parcelas) - preco;
+        return juros;
     }
     
     // Setters e getters
