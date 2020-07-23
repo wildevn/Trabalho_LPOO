@@ -24,9 +24,6 @@ public class Loja{
     public void processarCompra(Produto produto){
       if(produto.getQuantidade() > 0)
         produto.diminuiQuant();
-      else{
-        // não há o produto no estoque
-      }
     }
 
     public double calculaPrecoC(double preco, int parcelas){
