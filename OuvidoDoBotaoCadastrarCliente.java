@@ -19,6 +19,7 @@ private JTextField txtNomeCliente;
 private JTextField txtEndereco;
 private JTextField txtCpf;
 private JTextField txtIdade;
+private JTextField txtNumCartao;
 private JTextField txtIdCliente;
 private JPasswordField txtSenhaCliente;
 
@@ -31,13 +32,14 @@ private JPasswordField txtSenhaCliente;
     public void actionPerformed(ActionEvent evento)
     {
         JButton botaoOkCliente = new JButton("Cadastrar");
-        JPanel painelCadastraCliente = new JPanel(new GridLayout(7,2));
+        JPanel painelCadastraCliente = new JPanel(new GridLayout(8,2));
         
         // criando novas caixas de texto
         txtNomeCliente = new JTextField();
         txtEndereco = new JTextField();
         txtCpf = new JTextField();
         txtIdade = new JTextField();
+        txtNumCartao = new JTextField();
         txtIdCliente = new JTextField();
         txtSenhaCliente = new JPasswordField();
 
@@ -54,14 +56,17 @@ private JPasswordField txtSenhaCliente;
         painelCadastraCliente.add(new JLabel("Idade:"));
         painelCadastraCliente.add(txtIdade);
 
+        painelCadastraCliente.add(new JLabel("Numero do Cartao:"));
+        painelCadastraCliente.add(txtNumCartao);
+
         painelCadastraCliente.add(new JLabel("Id do cliente:"));
         painelCadastraCliente.add(txtIdCliente);
 
         painelCadastraCliente.add(new JLabel("Senha:"));
         painelCadastraCliente.add(txtSenhaCliente);
 
+        botaoOkCliente.addActionListener(new OuvidoDoBotaoOkCliente(janela, txtNomeCliente, txtEndereco, txtCpf, txtIdade, txtNumCartao, txtIdCliente, txtSenhaCliente));
         painelCadastraCliente.add(new JLabel(""));
-        botaoOkCliente.addActionListener(new OuvidoDoBotaoOkCliente(janela, txtNomeCliente, txtEndereco, txtCpf, txtIdade, txtIdCliente, txtSenhaCliente));
         painelCadastraCliente.add(botaoOkCliente);
 
         // mandando o painel para a janela e atualizando o frame
@@ -75,29 +80,5 @@ private JPasswordField txtSenhaCliente;
     public void setJanela(Janela janela)
     {
         this.janela = janela;
-    }
-    public JTextField getTxtNomeCliente()
-    {
-        return this.txtNomeCliente;
-    }
-    public JTextField getTxtEndereco()
-    {
-        return this.txtEndereco;
-    }
-    public JTextField getTxtCpf()
-    {
-        return this.txtCpf;
-    }
-    public JTextField getTxtIdade()
-    {
-        return this.txtIdade;
-    }
-    public JTextField getTxtIdCliente()
-    {
-        return this.txtIdCliente;
-    }
-    public JPasswordField getTxtSenhaCliente()
-    {
-        return this.txtSenhaCliente;
     }
 }
