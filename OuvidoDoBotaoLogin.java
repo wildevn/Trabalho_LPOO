@@ -93,4 +93,6 @@ private JPasswordField txtSenhaUsuario;
     {
         this.opcao = opcao;
     }
+
+
 }

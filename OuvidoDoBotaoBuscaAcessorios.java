@@ -53,7 +53,7 @@ public class OuvidoDoBotaoBuscaAcessorios implements ActionListener
             else
             {
                 botaoDetalhes = new JButton("Detalhes");
-                botaoDetalhes.addActionListener(new OuvidoDoBotaoDetalhes(janela, new Acessorio(" ", " Relogio digital tec", "branco", "Este relogio e feito pela maior criadora de relogios do mundo contendo nao apenas uma loja mas 900 ao redor do globo", "tipo 2", 23.4, 15, "Avulso")));
+                botaoDetalhes.addActionListener(new OuvidoDoBotaoDetalhes(janela, new Acessorio("Relogio digital tec", "branco", "Este relogio e feito pela maior criadora de relogios do mundo contendo nao apenas uma loja mas 900 ao redor do globo", "tipo 2", 23.4, 15, "Avulso")));
                 painelAcessorios.add(botaoDetalhes);
             }
         }

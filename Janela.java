@@ -22,7 +22,7 @@ private MenuQualquer menuGerenciar;
 private JPanel painelAnterior;
 
     // construtor
-    Janela(String titulo)
+    public Janela(String titulo)
     {
         janela = new JFrame(titulo);
         janela.setLayout(new BorderLayout());

@@ -69,4 +69,5 @@ public class OuvidoDoBotaoListarLojas implements ActionListener
     {
         this.janela = janela;
     }
+
 }

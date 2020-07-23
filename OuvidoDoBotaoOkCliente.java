@@ -24,7 +24,7 @@ private JTextField txtIdCliente;
 private JPasswordField txtSenhaCliente;
 
 
-    OuvidoDoBotaoOkCliente(Janela janela, JTextField txtNomeCliente,JTextField txtEndereco, JTextField txtCpf, JTextField txtIdade, JTextField txtNumCartao, JTextField txtIdCliente, JPasswordField txtSenhaCliente)
+    public OuvidoDoBotaoOkCliente(Janela janela, JTextField txtNomeCliente,JTextField txtEndereco, JTextField txtCpf, JTextField txtIdade, JTextField txtNumCartao, JTextField txtIdCliente, JPasswordField txtSenhaCliente)
     {
         setJanela(janela);
         setTxtNomeCliente(txtNomeCliente);

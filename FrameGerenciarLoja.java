@@ -18,7 +18,7 @@ private JPanel painel;
 private JButton botao;
 
     // Construtor
-    FrameGerenciarLoja(Janela janela, Loja loja)
+    public FrameGerenciarLoja(Janela janela, Loja loja)
     {
         setJanela(janela);
         setLoja(loja);
@@ -34,6 +34,7 @@ private JButton botao;
 
 
         botao = new JButton("Adicionar produto"); // adcionar action listener
+        botao.addActionListener(new OuvidoDoBotaoAdicionarProduto(janela, loja));
         painelGerenciar.add(botao);
 
         painelGerenciar.add(new JLabel("  Quantidade total de produtos: " + loja.getIdProdutos().getQuantElementosAdicionados()));

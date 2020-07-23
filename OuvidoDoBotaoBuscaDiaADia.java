@@ -53,7 +53,7 @@ public class OuvidoDoBotaoBuscaDiaADia implements ActionListener
             else
             {
                 botaoDetalhes = new JButton("Detalhes");
-                botaoDetalhes.addActionListener(new OuvidoDoBotaoDetalhes(janela, new DiaADia(" ", " asd", "fd", "TEste", "tipo 2", 23.4f, 15, "Avulso")));
+                botaoDetalhes.addActionListener(new OuvidoDoBotaoDetalhes(janela, new DiaADia(" asd", "fd", "TEste", "tipo 2", 23.4f, 15, "Avulso")));
                 painelDiaADia.add(botaoDetalhes);
             }
         }

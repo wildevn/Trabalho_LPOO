@@ -54,11 +54,11 @@ public class OuvidoDoBotaoBuscaTecnologia implements ActionListener
             else
             {
                 botaoDetalhes = new JButton("Detalhes");
-                botaoDetalhes.addActionListener(new OuvidoDoBotaoDetalhes(janela, new Tecnologia(" ", " asd", "fd", "TEste", "tipo 2", 23.4, 15, "Avulso")));
+                botaoDetalhes.addActionListener(new OuvidoDoBotaoDetalhes(janela, new Tecnologia(" asd", "fd", "TEste", "tipo 2", 23.4, 15, "Avulso")));
                 painelTecnologia.add(botaoDetalhes);
             }
         }
-
+        
         janela.removePainelAnterior();
         janela.setPainelAnterior(painelTecnologia);
         janela.getFrame().add(painelTecnologia, BorderLayout.CENTER);
@@ -69,3 +69,4 @@ public class OuvidoDoBotaoBuscaTecnologia implements ActionListener
     {
         this.janela = janela;
     }
+}
