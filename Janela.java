@@ -17,6 +17,7 @@ private JButton botaoInicio;
 private JButton botaoListarLojas;
 private MenuQualquer menuBuscaProduto;
 private MenuQualquer menuCadastrar;
+private MenuQualquer menuGerenciar;
 
 private JPanel painelAnterior;
 
@@ -32,17 +33,19 @@ private JPanel painelAnterior;
         configMenuBuscaProduto();
         configBotaoListarLojas();
         configMenuCadastrar();
+        configMenuGerenciar();
 
         barraDeMenu.add(botaoInicio);
         barraDeMenu.add(menuBuscaProduto.getMenu());
         barraDeMenu.add(botaoListarLojas);
         barraDeMenu.add(menuCadastrar.getMenu());
+        barraDeMenu.add(menuGerenciar.getMenu());
 
         configTelaInicial();
         
         janela.setJMenuBar(barraDeMenu);
         janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        janela.setSize(800, 600);
+        janela.setSize(900, 700);
         janela.setVisible(true);
     }
 
@@ -62,17 +65,12 @@ private JPanel painelAnterior;
     public void configTelaInicial()
     {
         // criar tela de bem vindo
-        JPanel painel1 = new JPanel(new GridLayout(2, 1));
-        JPanel painel2 = new JPanel();
-        painel1.add(new JLabel("Bem vindo ao sistema de lojas"));
-        painel2.add(new JLabel("X Clientes cadastrados"));
-        painel2.add(new JLabel("Y Lojas conveniadas"));
-        painel2.add(new JLabel("W Produtos disponiveis para compra"));
-        painel1.add(painel2);
+        JPanel painel = new JPanel();
+        painel.add(new JLabel("Bem vindo ao sistema de lojas"));
 
         removePainelAnterior();
-        setPainelAnterior(painel1);
-        janela.add(painel1, BorderLayout.CENTER);
+        setPainelAnterior(painel);
+        janela.add(painel, BorderLayout.CENTER);
         janela.setVisible(true);
 
     }
@@ -106,6 +104,17 @@ private JPanel painelAnterior;
         // action listeners
         menuCadastrar.adicionaActionListener(new OuvidoDoBotaoCadastrarCliente(this), 0);
         menuCadastrar.adicionaActionListener(new OuvidoDoBotaoCadastrarLoja(this), 1);
+    }
+    public void configMenuGerenciar()
+    {
+
+        // config nome do menu e das opcoes
+        menuGerenciar = new MenuQualquer("Gerenciar", 2);
+        menuGerenciar.setOpcaoNova("Cliente");
+        menuGerenciar.setOpcaoNova("Loja");
+        // action listeners
+        menuGerenciar.adicionaActionListener(new OuvidoLogin(this, 0), 0);  // login cliente
+        menuGerenciar.adicionaActionListener(new OuvidoLogin(this, 1), 1);  // login loja
     }
 
 // Setters e Getters
