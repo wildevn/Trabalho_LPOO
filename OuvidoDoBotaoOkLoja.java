@@ -17,15 +17,19 @@ public class OuvidoDoBotaoOkLoja implements ActionListener
 private Janela janela;
 private JTextField txtNomeLoja;
 private JTextField txtEnderecoLoja;
+private JTextField txtMaxCartaoSemJuros;
+private JTextField txtMaxCartaoComJuros;
 private JTextField txtIdLoja;
 private JPasswordField txtSenhaLoja;
 
 
-    OuvidoDoBotaoOkLoja(Janela janela, JTextField txtNomeLoja,JTextField txtEnderecoLoja, JTextField txtIdLoja, JPasswordField txtSenhaLoja)
+    OuvidoDoBotaoOkLoja(Janela janela, JTextField txtNomeLoja, JTextField txtEnderecoLoja, JTextField txtMaxCartaoSemJuros, JTextField txtMaxCartaoComJuros, JTextField txtIdLoja, JPasswordField txtSenhaLoja)
     {
         setJanela(janela);
         setTxtNomeLoja(txtNomeLoja);
         setTxtEnderecoLoja(txtEnderecoLoja);
+        setTxtMaxCartaoSemJuros(txtMaxCartaoSemJuros);
+        setTxtMaxCartaoComJuros(txtMaxCartaoComJuros);
         setTxtIdLoja(txtIdLoja);
         setTxtSenhaLoja(txtSenhaLoja);
     }
@@ -35,7 +39,7 @@ private JPasswordField txtSenhaLoja;
     {
         String aux = new String(txtSenhaLoja.getPassword());
         //Loja loja;
-        if(txtNomeLoja.getText().equals("") || txtEnderecoLoja.getText().equals("") || txtIdLoja.getText().equals("") || aux.equals(""))
+        if(txtNomeLoja.getText().equals("") || txtEnderecoLoja.getText().equals("") ||txtMaxCartaoSemJuros.getText().equals("") || txtMaxCartaoComJuros.getText().equals("") || txtIdLoja.getText().equals("") || aux.equals(""))
         {
             JOptionPane.showMessageDialog(null, "Por favor, verifique os campos necessarios para a criacao de uma nova loja!", "Alert!!!", JOptionPane.ERROR_MESSAGE);
         }// VERIFICAR SE O ID DA LOJA JA EXISTE, SE SIM DEVE GERAR UM ERRO
@@ -59,6 +63,14 @@ private JPasswordField txtSenhaLoja;
     public void setTxtEnderecoLoja(JTextField txtEnderecoLoja)
     {
         this.txtEnderecoLoja = txtEnderecoLoja;
+    }
+    public void setTxtMaxCartaoSemJuros(JTextField txtMaxCartaoSemJuros)
+    {
+        this.txtMaxCartaoSemJuros = txtMaxCartaoSemJuros;
+    }
+    public void setTxtMaxCartaoComJuros(JTextField txtMaxCartaoComJuros)
+    {
+        this.txtMaxCartaoComJuros = txtMaxCartaoComJuros;
     }
     public void setTxtIdLoja(JTextField txtIdLoja)
     {
