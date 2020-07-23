@@ -3,8 +3,8 @@ class Tecnologia extends Produto{
   String tipoTecnologia;
 
   // Construtor
-  Tecnologia(String idProduto, String nome, String cor, String descricaoTecnica, String tipo, double preco, int quantidade, String tipoTecnologia){
-    super(idProduto, nome, cor, descricaoTecnica, tipo, preco, quantidade);
+  Tecnologia(String nome, String cor, String descricaoTecnica, String idLoja, double preco, int quantidade, String tipoTecnologia){
+    super(nome, cor, descricaoTecnica, tipo, preco, quantidade);
     setTipoTecnologia(tipoTecnologia);
   }
 
