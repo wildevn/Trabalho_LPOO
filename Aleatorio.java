@@ -4,28 +4,28 @@ public class Aleatorio{
 
     private int[] array = new int[1000];
     private Random random = new Random();
-    private boolean temnumero = false;
+    private boolean temNumero = false;
     private int cont = 0;
 
     private int geraAleatorio(){
         int valor = random.nextInt(1000);
 
-        for(int i = 0; i<1000){
+        for(int i = 0; i<1000; i++){
             if(array[i] == valor)
-                temnumero = true;
+                temNumero = true;
             
-            if(temnumero){
+            if(temNumero){
                 valor = geraAleatorio();
             }
             else{
                 array[cont] = valor;
-                cont++
+                cont++;
             }
         }
         return valor;
     }
 
     String geraBoleto(){
-        return geraAleatorio().toString();
+        return Integer.toString(geraAleatorio());
     }
 }
