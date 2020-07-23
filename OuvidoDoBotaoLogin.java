@@ -46,6 +46,7 @@ private JPasswordField txtSenhaUsuario;
     {
         String aux = new String(txtSenhaUsuario.getPassword());
         FrameGerenciarLoja frameGerenciarLoja;
+        FrameGerenciarCliente frameGerenciarCliente;
         JPanel painel = new JPanel();
 
         if(txtIdUsuario.getText().equals("") || aux.equals(""))
@@ -63,7 +64,7 @@ private JPasswordField txtSenhaUsuario;
             }
             else if(opcao == 0)
             {
-                // cliente
+                frameGerenciarCliente = new FrameGerenciarCliente(janela, new Cliente("box", "jiar", "545405454", "Rua videl, 123", "1231.124", 13));
             }
             else
             {

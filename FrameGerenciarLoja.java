@@ -28,7 +28,9 @@ private JButton botao;
         painel.add(new JLabel("  Nome: " + loja.getNome()));
         painel.add(new JLabel("  Endereco: " + loja.getEndereco()));
         painel.add(new JLabel("  id Loja: " + loja.getIdLoja()));
-        botao = new JButton("Excluir loja"); // adicionar action listener
+
+        botao = configBotaoExcluirLoja();
+
         painel.add(botao);
         painelGerenciar.add(painel);
 
@@ -54,7 +56,7 @@ private JButton botao;
                 }
                 else
                 {
-                    botao = new JButton("Excluir produto"); // falta action listener
+                    botao = configBotaoExcluirProduto();
                     painel.add(botao);
                 }
             }
@@ -67,7 +69,36 @@ private JButton botao;
         janela.getFrame().setVisible(true);
     }
 
+    // metodos
+    public JButton configBotaoExcluirLoja()
+    {
+        JButton botao = new JButton("Excluir Loja");
+        ActionListener ouvidoDoBotaoExcluirLoja = new ActionListener()
+        {
+            public void actionPerformed(ActionEvent evento)
+            {
+                // chamar pra excluir
+            }
+            
+        };
+        botao.addActionListener(ouvidoDoBotaoExcluirLoja);
 
+        return botao;
+    }
+    public JButton configBotaoExcluirProduto()
+    {
+        JButton botao = new JButton("Excluir Produto");
+        ActionListener ouvidoDoBotaoExcluirProduto = new ActionListener()
+        {
+            public void actionPerformed(ActionEvent evento)
+            {
+                // chamar para excluir
+            }
+        };
+        botao.addActionListener(ouvidoDoBotaoExcluirProduto);
+
+        return botao;
+    }
 
     // Setters e Getters
     public void setJanela(Janela janela)
