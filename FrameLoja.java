@@ -27,7 +27,7 @@ private JButton botaoProdutos;
         painelLoja.add(new JLabel("Endereco:" + loja.getEndereco()));
         //painelLoja.add(new JLabel("Qta max sem juros no cartao: " + loja.getMaxSemJurosCartao()));
         //painelLoja.add(new JLabel("Qta max com juros no cartao: " + loja.getMaxComJurosCartao()));
-        painelLoja.add(new JLabel("Quantidade de produtos: " + loja.idProdutos.quantElementosAdicionados())); // falta pegar a quantidade de produtos da loja
+        painelLoja.add(new JLabel("Quantidade de produtos: " + loja.getIdProdutos().getQuantElementosAdicionados()));
         botaoProdutos.addActionListener(new OuvidoDoBotaoExibirProdutosLoja(janela, loja));
         painelLoja.add(botaoProdutos); // adicionar action listener
 
