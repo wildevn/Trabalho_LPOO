@@ -3,8 +3,8 @@ class Acessorio extends Produto{
   String tipoAcessorio;
 
   // Construtor
-  Acessorio(String idProduto, String nome, String cor, String descricaoTecnica, String tipo, double preco, int quantidade, String tipoAcessorio){
-    super(idProduto, nome, cor, descricaoTecnica, tipo, preco, quantidade);
+  Acessorio(String nome, String cor, String descricaoTecnica, String idLoja, double preco, int quantidade, String tipoAcessorio){
+    super(nome, cor, descricaoTecnica, tipo, preco, quantidade);
     setTipoAcessorio(tipoAcessorio);
   }
 
