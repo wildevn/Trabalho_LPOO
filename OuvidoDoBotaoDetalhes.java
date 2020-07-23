@@ -13,9 +13,7 @@ public class OuvidoDoBotaoDetalhes implements ActionListener
 {
 private Janela janela;
 private Loja loja;
-private Acessorio acessorio;
-private Tecnologia tecnologia;
-private DiaADia diaADia;
+private Produto produto;
 
     // construtores
     OuvidoDoBotaoDetalhes(Janela janela, Loja loja)
@@ -23,20 +21,10 @@ private DiaADia diaADia;
         setJanela(janela);
         setLoja(loja);
     }
-    OuvidoDoBotaoDetalhes(Janela janela, Acessorio acessorio)
+    OuvidoDoBotaoDetalhes(Janela janela, Produto produto)
     {
         setJanela(janela);
-        setAcessorio(acessorio);
-    }
-    OuvidoDoBotaoDetalhes(Janela janela, Tecnologia tecnologia)
-    {
-        setJanela(janela);
-        setTecnologia(tecnologia);
-    }
-    OuvidoDoBotaoDetalhes(Janela janela, DiaADia diaADia)
-    {
-        setJanela(janela);
-        setDiaADia(diaADia);
+        setProduto(produto);
     }
     
 
@@ -50,17 +38,9 @@ private DiaADia diaADia;
         {
             FrameLoja frameLoja = new FrameLoja(janela, loja);
         }
-        else if(acessorio != null)
+        else
         {
-            //
-        }
-        else if(tecnologia != null)
-        {
-            //
-        }
-        else 
-        {
-            //
+            FrameProduto frameProduto = new FrameProduto(janela, produto);
         }
     }
 
@@ -73,17 +53,9 @@ private DiaADia diaADia;
     {
         this.loja = loja;
     }
-    public void setAcessorio(Acessorio acessorio)
+    public void setProduto(Produto produto)
     {
-        this.acessorio = acessorio;
-    }
-    public void setTecnologia(Tecnologia tecnologia)
-    {
-        this.tecnologia = tecnologia;
-    }
-    public void setDiaADia(DiaADia diaADia)
-    {
-        this.diaADia = diaADia;
+        this.produto = produto;
     }
 
 }
