@@ -24,13 +24,11 @@ public class OuvidoDoBotaoListarLojas implements ActionListener
     {
     JLabel aux;
     JPanel painelListarLojas;
-    JButton[] botaoDetalhes;
-    int auxiliar = 0;
+    JButton botaoDetalhes;
     
         // encontrar e puxar todas as lojas do BD e a quantidade
 
         painelListarLojas = new JPanel(new GridLayout(20, 5)); // grid deve ser no formato (nLojas, 5 colunas)
-        botaoDetalhes = new JButton[20]; // nlojas = n botoes
 
         for(int i = 0; i < 100; i++)
         {
@@ -56,10 +54,9 @@ public class OuvidoDoBotaoListarLojas implements ActionListener
             }
             else 
             {
-                botaoDetalhes[auxiliar] = new JButton("Detalhes");
-                botaoDetalhes[auxiliar].addActionListener(new OuvidoDoBotaoDetalhes(janela, new Loja("x", "x0", "x1"))); // será passada a loja obtida do BD
-                painelListarLojas.add(botaoDetalhes[auxiliar]);
-                auxiliar++;
+                botaoDetalhes = new JButton("Detalhes");
+                botaoDetalhes.addActionListener(new OuvidoDoBotaoDetalhes(janela, new Loja("x", "x0", "x1"))); // será passada a loja obtida do BD
+                painelListarLojas.add(botaoDetalhes);
             }
         }
         janela.removePainelAnterior();
@@ -72,5 +69,4 @@ public class OuvidoDoBotaoListarLojas implements ActionListener
     {
         this.janela = janela;
     }
-
 }
