@@ -2,6 +2,7 @@ class Cliente{
 
     private String idCliente, nome, cpf, endereco, numCartao, senha;
     private int idade, cont;
+    private double dinheiroGasto;
     private VetorInfinitoString inventario = new VetorInfinitoString();
   
     // Construtor
@@ -15,10 +16,10 @@ class Cliente{
     }
 
     // Metodos
-    void comprar(Produto produto){
+    void comprar(Produto produto, double preco){
         String novaCompra = produto.getIdProduto();
         inventario.adicionaNoFinal(novaCompra);
-        dinheiroGasto += produto.getPreco();
+        dinheiroGasto += preco;
     }
   
     // Setters e getters
@@ -42,6 +43,13 @@ class Cliente{
     }
     void setSenha(String senha){
         this.senha = senha;
+    }
+    public void setDinheiroGasto(double valor){
+        this.dinheiroGasto = valor;
+    }
+
+    public double getDinheiroGasto(){
+        return dinheiroGasto;
     }
     String getIdCliente(){
       return idCliente;
