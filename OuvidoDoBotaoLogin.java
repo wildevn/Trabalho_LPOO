@@ -45,6 +45,7 @@ private JPasswordField txtSenhaUsuario;
     public void actionPerformed(ActionEvent evento)
     {
         String aux = new String(txtSenhaUsuario.getPassword());
+        FrameGerenciarLoja frameGerenciarLoja;
         JPanel painel = new JPanel();
 
         if(txtIdUsuario.getText().equals("") || aux.equals(""))
@@ -56,15 +57,19 @@ private JPasswordField txtSenhaUsuario;
             //      if(produtos != null) {frame continua compra}
             //      else if opcao == 0 -> {frame gerencia cliente}
             //      else, opcao == 1 ->{frame gerencia loja}
-            painel.add(new JLabel("teste"));
-            janela.removePainelAnterior();
-            janela.setPainelAnterior(painel);
-            janela.getFrame().add(painel);
-            janela.getFrame().setVisible(true);
+            if(produto != null)
+            {
+                // compra
+            }
+            else if(opcao == 0)
+            {
+                // cliente
+            }
+            else
+            {
+                frameGerenciarLoja = new FrameGerenciarLoja(janela, new Loja("id 23", "Casas Bahia", "Rua dos Pardais, 544"));
+            }
         }
-        
-        
-        
     } 
     
     // settters e getters
@@ -88,6 +93,4 @@ private JPasswordField txtSenhaUsuario;
     {
         this.opcao = opcao;
     }
-
-
 }
