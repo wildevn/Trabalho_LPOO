@@ -18,7 +18,7 @@ class Loja{
 
     void processarCompra(String idProduto){
         for(int i = 0; i<idProdutos.getQuantElementosAdicionados(); i++){
-            if(idProdutos.getVetor(i).equals(idProduto){
+            if(idProdutos.getElemento(i).equals(idProduto)){
                 // busca produto no bd com o id
                 // diminui a quantidade do produto em 1
             }
@@ -49,5 +49,9 @@ class Loja{
     }
     String getSenha(){
         return senha;
+    }
+    VetorInfinitoString getIdProdutos()
+    {
+      return idProdutos;
     }
 }
