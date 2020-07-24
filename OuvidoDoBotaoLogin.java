@@ -57,10 +57,10 @@ private JPasswordField txtSenhaUsuario;
             //  procura se tem usuario com nome, no final compara se tiver continua, se n mande erro
             //      if(produtos != null) {frame continua compra}
             //      else if opcao == 0 -> {frame gerencia cliente}
-            //      else, opcao == 1 ->{frame gerencia loja}
+            //      else, opcao == 1 -> {frame gerencia loja}
             if(produto != null)
             {
-                // compra
+                //frameCompra = new FrameCompra()
             }
             else if(opcao == 0)
             {

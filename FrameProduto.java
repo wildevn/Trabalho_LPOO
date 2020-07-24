@@ -20,7 +20,7 @@ private JButton botaoComprar;
 
 
     // Construtor
-    FrameProduto(Janela janela, Produto produto) // precisa do frame gerado anteriormente
+    public FrameProduto(Janela janela, Produto produto) // precisa do frame gerado anteriormente
     {
         setJanela(janela);
         setProduto(produto);
